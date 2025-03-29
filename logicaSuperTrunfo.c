@@ -2,7 +2,7 @@
 int main (){
 
  //Informaçoes da carta 1
- char país1[50];
+ char pais1[50];
  unsigned long int populacao1;
  float area1; //km2
  float pib1; //em bilhoes
@@ -10,7 +10,7 @@ int main (){
 
 
 //Informações da carta 2
-char país2[50];
+char pais2[50];
 unsigned long int populacao2;
 float area2; //km2
 float pib2; //em bilhoes
@@ -22,7 +22,7 @@ printf("===== Seja Bem-Vindo ao Super Trunfo =====\n");
 printf("* Carta 1 *\n");
 
 printf("Insira o Nome do Pais\n");
-scanf ("%49s", país1);
+scanf ("%49s", pais1);
 
 printf("Insira a População\n");
 scanf ("%lu", &populacao1);
@@ -41,7 +41,7 @@ printf("Agora insira os dados da carta N° 2\n");
 printf("** Carta 2 **\n");
 
 printf("Insira o Nome do Pais\n");
-scanf ("%49s", país2);
+scanf ("%49s", pais2);
 
 printf("Insira a População\n");
 scanf ("%lu", &populacao2);
@@ -63,7 +63,7 @@ float densidade2 = (float)populacao2 / area2;
 // Resultado das Cartas
 
 printf("* Sua carta 1 é: *\n");
-printf("Nome do País: %s\n", país1);
+printf("Nome do País: %s\n", pais1);
 printf("População: %lu\n", populacao1);
 printf ("Área: %.2f km2 \n", area1);
 printf("PIB: %f Bilhoes de reais\n", pib1);
@@ -71,7 +71,7 @@ printf("N° de pontos turisticos: %d\n", turismo1);
 printf("Densidade populacional: %.2f\n", densidade1);
 
 printf("* Sua carta 2 é: *\n");
-printf("Nome do País: %s\n", país2);
+printf("Nome do País: %s\n", pais2);
 printf("População: %lu\n", populacao2);
 printf ("Área: %.2f km2 \n", area2);
 printf("PIB: %f Bilhoes de reais\n", pib2);
@@ -95,44 +95,44 @@ switch (opcao)
 {
 case 1:
     printf("Comparação do atributo população!\n");
-    printf("País %s: %lu País %s: %lu\n",país1 ,populacao1, país2, populacao2);
+    printf("País %s: %lu País %s: %lu\n",pais1 ,populacao1, pais2, populacao2);
     if (populacao1 > populacao2){
-        printf ("País: %s foi o(a) campeão!!!", país1);
+        printf ("País: %s foi o(a) campeão!!!", pais1);
     }else if(populacao1 < populacao2){
-        printf("País: %s foi o(a) campeão!!!", país2);
+        printf("País: %s foi o(a) campeão!!!", pais2);
     }else {
         printf("Empate!");
     }
     break;
 case 2:
     printf("Comparação do atributo Área!\n");
-    printf("País %s: %.2f País %s: %.2f\n",país1 ,area1, país2, area2);
+    printf("País %s: %.2f País %s: %.2f\n",pais1 ,area1, pais2, area2);
     if (area1 > area2){
-        printf ("País: %s foi o(a) campeão!!!", país1);
+        printf ("País: %s foi o(a) campeão!!!", pais1);
     }else if(area1 < area2){
-        printf("País: %s foi o(a) campeão!!!", país2);
+        printf("País: %s foi o(a) campeão!!!", pais2);
     }else {
         printf("Empate!");
     }
     break;
 case 3:
     printf("Comparação do atributo PIB!\n");
-    printf("País %s: %f País %s: %f\n",país1 ,pib1, país2, pib2);
+    printf("País %s: %f País %s: %f\n",pais1 ,pib1, pais2, pib2);
     if (pib1 > pib2){
-        printf ("País: %s foi o(a) campeão!!!", país1);
+        printf ("País: %s foi o(a) campeão!!!", pais1);
     }else if(pib1 < pib2){
-        printf("País: %s foi o(a) campeão!!!", país2);
+        printf("País: %s foi o(a) campeão!!!", pais2);
     }else {
         printf("Empate!");
     }
     break;
 case 4:
     printf("Comparação de Pontos Turisticos!\n");
-    printf("País %s: %d País %s: %d\n",país1 ,turismo1, país2, turismo2);
+    printf("País %s: %d País %s: %d\n",pais1 ,turismo1, pais2, turismo2);
     if (turismo1 > turismo2){
-        printf ("País: %s foi o(a) campeão!!!", país1);
+        printf ("País: %s foi o(a) campeão!!!", pais1);
     }else if(turismo1 < turismo2){
-        printf("País: %s foi o(a) campeão!!!", país2);
+        printf("País: %s foi o(a) campeão!!!", pais2);
     }else {
         printf("Empate!");
     }
@@ -141,11 +141,11 @@ case 4:
 //a carta com menor valor de densidade vence
 case 5:
     printf("Comparação da Densidade Populacional!\n");
-    printf("País %s: %.2f País %s: %.2f\n",país1 ,densidade1, país2, densidade2);
+    printf("País %s: %.2f País %s: %.2f\n",pais1 ,densidade1, pais2, densidade2);
     if (densidade1 < densidade2){
-        printf ("País: %s foi o(a) campeão!!!", país1);
+        printf ("País: %s foi o(a) campeão!!!", pais1);
     }else if(densidade1 > densidade2){
-        printf("País: %s foi o(a) campeão!!!", país2);
+        printf("País: %s foi o(a) campeão!!!", pais2);
     }else {
         printf("Empate!");
     }
