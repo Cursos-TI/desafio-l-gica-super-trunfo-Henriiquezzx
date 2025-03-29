@@ -79,83 +79,104 @@ printf("N° de pontos turisticos: %d\n", turismo2);
 printf("Densidade populacional: %.2f\n", densidade2);
 
 //menu interação com o cliente
-int opcao;
+int atributo1, atributo2;
+do {
 printf("======= Para continuar siga as instruções a seguir =======\n");
 printf("Insira o número do atributo que você quer comparar\n");
-printf("População = 1\n");
-printf("Área = 2\n");
-printf("PIB = 3\n");
-printf("Pontos turisticos = 4\n");
-printf("Densidade Populacional = 5\n");
-printf("Sair = 6\n");
+printf("1 - População\n");
+printf("2 - Área\n");
+printf("3 - PIB\n");
+printf("4 - Pontos turisticos\n");
+printf("5 - Densidade Populacional\n");
+printf("6 - Sair\n");
 
-scanf("%d", &opcao);
-//sequencia de comandos para combinações dos atributos 
-switch (opcao)
-{
-case 1:
-    printf("Comparação do atributo população!\n");
-    printf("País %s: %lu País %s: %lu\n",pais1 ,populacao1, pais2, populacao2);
-    if (populacao1 > populacao2){
-        printf ("País: %s foi o(a) campeão!!!", pais1);
-    }else if(populacao1 < populacao2){
-        printf("País: %s foi o(a) campeão!!!", pais2);
-    }else {
-        printf("Empate!");
-    }
-    break;
-case 2:
-    printf("Comparação do atributo Área!\n");
-    printf("País %s: %.2f País %s: %.2f\n",pais1 ,area1, pais2, area2);
-    if (area1 > area2){
-        printf ("País: %s foi o(a) campeão!!!", pais1);
-    }else if(area1 < area2){
-        printf("País: %s foi o(a) campeão!!!", pais2);
-    }else {
-        printf("Empate!");
-    }
-    break;
-case 3:
-    printf("Comparação do atributo PIB!\n");
-    printf("País %s: %f País %s: %f\n",pais1 ,pib1, pais2, pib2);
-    if (pib1 > pib2){
-        printf ("País: %s foi o(a) campeão!!!", pais1);
-    }else if(pib1 < pib2){
-        printf("País: %s foi o(a) campeão!!!", pais2);
-    }else {
-        printf("Empate!");
-    }
-    break;
-case 4:
-    printf("Comparação de Pontos Turisticos!\n");
-    printf("País %s: %d País %s: %d\n",pais1 ,turismo1, pais2, turismo2);
-    if (turismo1 > turismo2){
-        printf ("País: %s foi o(a) campeão!!!", pais1);
-    }else if(turismo1 < turismo2){
-        printf("País: %s foi o(a) campeão!!!", pais2);
-    }else {
-        printf("Empate!");
-    }
-    break;
+scanf("%d", &atributo1);
+//Codigo de repetição caso o cliente coloque o mesmo atributo
+  
+} while (atributo1 < 1 || atributo1 > 6);
 
-//a carta com menor valor de densidade vence
-case 5:
-    printf("Comparação da Densidade Populacional!\n");
-    printf("País %s: %.2f País %s: %.2f\n",pais1 ,densidade1, pais2, densidade2);
-    if (densidade1 < densidade2){
-        printf ("País: %s foi o(a) campeão!!!", pais1);
-    }else if(densidade1 > densidade2){
-        printf("País: %s foi o(a) campeão!!!", pais2);
-    }else {
-        printf("Empate!");
-    }
-    break;
-case 6:
+    if (atributo1 == 6 ){
     printf("Obrigado por jogar o Super Trunfo Paises!!!");
- 
-    break;
-default: printf("ERROR 105");
-    break;
+    return 0;
 }
-return 0;
+
+do {
+    printf("Escolha outro atributo para a comparação (sendo diferente do primeiro)!\n");
+    scanf("%d", &atributo2);
+    
+} while (atributo1 == atributo2 || atributo2 < 1 || atributo2 > 6);
+
+
+switch (atributo1) {
+    case 1:
+        printf("\nComparação do atributo População!\n");
+        printf("País %s: %lu - País %s: %lu\n", pais1, populacao1, pais2, populacao2);
+        (populacao1 > populacao2) ? printf("País vencedor: %s!\n", pais1) :
+        (populacao1 < populacao2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 2:
+        printf("\nComparação do atributo Área!\n");
+        printf("País %s: %.2f km² - País %s: %.2f km²\n", pais1, area1, pais2, area2);
+        (area1 > area2) ? printf("País vencedor: %s!\n", pais1) :
+        (area1 < area2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 3:
+        printf("\nComparação do atributo PIB!\n");
+        printf("País %s: %.2f bilhões - País %s: %.2f bilhões\n", pais1, pib1, pais2, pib2);
+        (pib1 > pib2) ? printf("País vencedor: %s!\n", pais1) :
+        (pib1 < pib2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 4:
+        printf("\nComparação de Pontos Turísticos!\n");
+        printf("País %s: %d - País %s: %d\n", pais1, turismo1, pais2, turismo2);
+        (turismo1 > turismo2) ? printf("País vencedor: %s!\n", pais1) :
+        (turismo1 < turismo2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 5:
+        printf("\nComparação da Densidade Populacional!\n");
+        printf("País %s: %.2f hab/km² - País %s: %.2f hab/km²\n", pais1, densidade1, pais2, densidade2);
+        (densidade1 < densidade2) ? printf("País vencedor: %s!\n", pais1) :
+        (densidade1 > densidade2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    default:
+        printf("Erro inesperado!\n");
+        break;
 }
+
+switch (atributo2) {
+    case 1:
+        printf("\nComparação do atributo População!\n");
+        printf("País %s: %lu - País %s: %lu\n", pais1, populacao1, pais2, populacao2);
+        (populacao1 > populacao2) ? printf("País vencedor: %s!\n", pais1) :
+        (populacao1 < populacao2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 2:
+        printf("\nComparação do atributo Área!\n");
+        printf("País %s: %.2f km² - País %s: %.2f km²\n", pais1, area1, pais2, area2);
+        (area1 > area2) ? printf("País vencedor: %s!\n", pais1) :
+        (area1 < area2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 3:
+        printf("\nComparação do atributo PIB!\n");
+        printf("País %s: %.2f bilhões - País %s: %.2f bilhões\n", pais1, pib1, pais2, pib2);
+        (pib1 > pib2) ? printf("País vencedor: %s!\n", pais1) :
+        (pib1 < pib2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 4:
+        printf("\nComparação de Pontos Turísticos!\n");
+        printf("País %s: %d - País %s: %d\n", pais1, turismo1, pais2, turismo2);
+        (turismo1 > turismo2) ? printf("País vencedor: %s!\n", pais1) :
+        (turismo1 < turismo2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    case 5:
+        printf("\nComparação da Densidade Populacional!\n");
+        printf("País %s: %.2f hab/km² - País %s: %.2f hab/km²\n", pais1, densidade1, pais2, densidade2);
+        (densidade1 < densidade2) ? printf("País vencedor: %s!\n", pais1) :
+        (densidade1 > densidade2) ? printf("País vencedor: %s!\n", pais2) : printf("Empate!\n");
+        break;
+    default:
+        printf("Erro inesperado!\n");
+        break;
+}
+
+return 0;  }
